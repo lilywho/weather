@@ -11,7 +11,9 @@ var Weather = require("../models/weather.js");
 // Index
 // ========================================
 router.get("/", function(req, res) {
-	res.render("index.ejs", )
+	Weather.find().then(function(weather) {
+		res.render("index.ejs", {weather});
+	});
 });
 
 
@@ -28,14 +30,20 @@ router.get("/new", function(req, res) {
 // ========================================
 router.get("/:zip", function(req, res) {
 	var zip = req.params.zip;
-	request("api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us" + "&APPID=" + process.env.APIKey, function (error, response, body) {
+	console.log(zip);
+	console.log(process.env.APIKEY);
+	request("http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us" + "&appid=" + process.env.APIKEY, function (error, response, body) {
+	// request("http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us" + "&appid=cf2c38344a323cecac889332fe7c92aa", function (error, response, body) {
 		var response_data;
+		console.log(body);
     if (!error && response.statusCode == 200) {
       console.log('-----------------------------');
       console.log("Data here lol.");
       var weatherData = JSON.parse(body);
       console.log('-----------------------------');
+      console.log(weatherData);
       res.json(weatherData);
+      res.render("show.ejs", {weatherData})
     };
 	});
 });
@@ -75,12 +83,13 @@ router.put("/:zip", function(req, res) {
 router.post("/", function(req, res) {
 	console.log(req.body);
 	var weather = new Weather(req.body);
-	weather.save(function(err, weather) {
+	weather.save(function(err) {
 		if (err) {
-			throw err;
+			console.log(err);
 		} else {
-			res.redirect("/weather");
+			console.log("Create stuff lol.")
 		};
+		res.redirect("/weather");
 	});
 });
 
@@ -88,14 +97,10 @@ router.post("/", function(req, res) {
 // Delete
 // ========================================
 router.delete("/:id", function(req, res) {
-	console.log(req.params.id);
-	for (i = 0; i < Weather.length; i++) {
-		if (Weather[i].id == req.params.id) {
-			console.log("Weather[i]");
-			Weather.splice(i, 1);
-		};
-	};
-	res.redirect("/weather");
+	Weather.findByIdAndRemove(req.params.id, function() {
+		console.log("Delete stuff lol.")
+		res.redirect("/weather");
+	});
 });
 
 

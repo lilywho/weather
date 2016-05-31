@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <header>
+  </header>
+  <body>
+    <form action="/weather/<%=weather.id%>?_method=PUT" method="POST">
+      <input type="text" name="ZIP" value="<%=weather.zip%>" placeholder="ZIP Code">
+      <button>Edit</button>
+    </form>
+  </body>
+</html>

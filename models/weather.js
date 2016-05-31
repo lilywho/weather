@@ -10,11 +10,11 @@ var mongoose = require("mongoose");
 var weatherSchema = new mongoose.Schema({
 	zip: Number,
 	name: String,
-	main.temp: Number,
-	main.temp_min: Number,
-	main.temp_max: Number,
-	// sys.sunrise: Number,
-	// sys.sunset: Number
+	temp: Number,
+	temp_min: Number,
+	temp_max: Number,
+	sunrise: Number,
+	sunset: Number
 });
 
 var Weather = mongoose.model("Weather", weatherSchema);
