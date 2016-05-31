@@ -30,10 +30,9 @@ router.get("/new", function(req, res) {
 // ========================================
 router.get("/:zip", function(req, res) {
 	var zip = req.params.zip;
-	console.log(zip);
-	console.log(process.env.APIKEY);
-	request("http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us" + "&appid=" + process.env.APIKEY, function (error, response, body) {
-	// request("http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us" + "&appid=cf2c38344a323cecac889332fe7c92aa", function (error, response, body) {
+	// console.log(zip);
+	// console.log(process.env.APIKEY);
+	request("http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us" + "&units=imperial" + "&appid=" + process.env.APIKEY, function (error, response, body) {
 		var response_data;
 		console.log(body);
     if (!error && response.statusCode == 200) {
@@ -42,8 +41,8 @@ router.get("/:zip", function(req, res) {
       var weatherData = JSON.parse(body);
       console.log('-----------------------------');
       console.log(weatherData);
-      res.json(weatherData);
-      res.render("show.ejs", {weatherData})
+      // res.json(weatherData);
+      res.render("show.ejs", {weatherData});
     };
 	});
 });
