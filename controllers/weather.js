@@ -40,7 +40,6 @@ router.get("/:zip", function(req, res) {
       console.log("Data here lol.");
       var weatherData = JSON.parse(body);
       console.log('-----------------------------');
-      console.log(weatherData);
       // res.json(weatherData);
       res.render("show.ejs", {weatherData});
     };
@@ -52,7 +51,10 @@ router.get("/:zip", function(req, res) {
 // Edit
 // ========================================
 router.get("/:zip/edit", function(req, res) {
-	Weather.findbyId(req.params.id, function(err, weather) {
+	// var zip = req.params.zip;
+	console.log(req.params.zip);
+	Weather.findOne( { zip: req.params.zip }, function(err, weather) {
+	// Weather.findById(req.params.id, function(err, room) {
 		if (err) {
 			console.log(err);
 		} else {
@@ -67,12 +69,12 @@ router.get("/:zip/edit", function(req, res) {
 // Update
 // ========================================
 router.put("/:zip", function(req, res) {
-	Weather.findOneAndUpdate({
-		_zip: req.params.id
-	}, req.body, function(err, weather) {
+	// Weather.findOneAndUpdate( { _id: req.params.id }, req.body, function(err, weather) {
+	Weather.findOneAndUpdate( { zip: req.params.zip }, req.body, function(err, weather) {
+	// Weather.findAndModify( { zip: req.params.zip }, req.body, function(err, weather) {
 		console.log(req.body);
 	});
-	res.redirect("/weather/" + req.params.id);
+	res.redirect("/weather");
 });
 
 

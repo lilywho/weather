@@ -9,12 +9,12 @@ var mongoose = require("mongoose");
 // ========================================
 var weatherSchema = new mongoose.Schema({
 	zip: Number,
-	name: String,
-	temp: Number,
-	temp_min: Number,
-	temp_max: Number,
-	sunrise: Number,
-	sunset: Number
+	// name: String,
+	// temp: Number,
+	// temp_min: Number,
+	// temp_max: Number
+	// sunrise: Number,
+	// sunset: Number
 });
 
 var Weather = mongoose.model("Weather", weatherSchema);

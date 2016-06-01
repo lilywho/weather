@@ -4,7 +4,7 @@
 var express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser"),
-	db = process.env.MONGODB_URI || "mongodb://localhost/weather_app",
+	mongoUri = process.env.MONGODB_URI || "mongodb://localhost/weather_app",
 	methodOverride = require("method-override"),
 	mongoose = require("mongoose"),
 	morgan = require("morgan"),
@@ -30,7 +30,7 @@ app.use(methodOverride(function(req, res){
 // ========================================
 // Database
 // ========================================
-mongoose.connect(db);
+mongoose.connect(mongoUri);
 
 
 // ========================================

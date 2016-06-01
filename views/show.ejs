@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<% include ../views/partials/head.ejs %>
 </head>
+<header>
+	<% include ../views/partials/header.ejs %>
+</header>
 <body>
-<p><%=weatherData.name%></p>
-<p><%=weatherData.main.temp%></p>
-<p><%=weatherData.main.temp_min%></p>
-<p><%=weatherData.main.temp_max%></p>
+	<br><%=weatherData.name%>
+	<br><%=weatherData.main.temp%>
+	<br><%=weatherData.main.temp_min%>
+	<br><%=weatherData.main.temp_max%>
 </body>
+<footer> 
+</footer>
 </html>

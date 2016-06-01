@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  </head>
-  <header>
-  </header>
+<head>
+  <% include ../views/partials/head.ejs %>
+</head>
+<header>
+  <% include ../views/partials/header.ejs %>
+</header>
   <body>
-    <form action="/weather/<%=weather.id%>?_method=PUT" method="POST">
-      <input type="text" name="ZIP" value="<%=weather.zip%>" placeholder="ZIP Code">
-      <button>Edit</button>
+    <form action="/weather/<%= weather.zip %>" method="POST">
+      <input type="number" name="zip" value="<%= weather.zip %>"/>
+      <input type="hidden" name="_method" value="PUT"/>
+      <button>Submit</button>
     </form>
   </body>
 </html>
