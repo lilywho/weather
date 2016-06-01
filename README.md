@@ -4,11 +4,11 @@
 - CRUD app that allows users to add multiple zip codes to a database and then check the current temperature and high/low of each location for the day. RESTful routes included.
 
 ### Tech
-- Front End
+#### Front End
 1. HTML
 2. CSS
 
-- Back End
+#### Back End
 1. express.js
 2. node.js
 3. .ejs
