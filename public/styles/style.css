@@ -10,7 +10,7 @@ h1 {
 }
 
 h2 {
-	font-size: 2rem;
+	font-size: 3.5rem;
 }
 
 a {
@@ -32,6 +32,7 @@ input {
 
 button {
 	height: 2.25rem;
+	width: 100px;
 	font-size: 1.75rem;
 }
 
