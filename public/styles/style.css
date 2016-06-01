@@ -6,7 +6,7 @@
 }
 
 h1 {
-	font-size: 4rem;
+	font-size: 3.5rem;
 }
 
 h2 {
@@ -21,8 +21,23 @@ a:hover, a:active {
 	color: #0D47A1;
 }
 
+input {
+	height: 2.25rem;
+	font-size: 2rem;
+}
+
+button {
+	height: 2.25rem;
+	font-size: 1.75rem;
+}
+
+p {
+	margin: 5px 0 5px 0;
+}
+
 #container {
 	font-size: 3rem;
+	margin: 0;
 }
 
 #funstuff {
@@ -54,14 +69,14 @@ a:hover, a:active {
 
 @media (max-width: 450px) {
 	h1 {
-		font-size: 4rem;
+		font-size: 2rem;
 	}
 
 	h2 {
-		font-size: 3.5rem;
+		font-size: 1.5rem;
 	}
 
 	#container	{
-		font-size: 4rem;
+		font-size: 2rem;
 	}
 }
