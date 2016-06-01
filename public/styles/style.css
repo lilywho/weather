@@ -1,3 +1,67 @@
 * {
-	font-family: 'Muli', sans-serif;
+	font-family: 'Questrial', sans-serif;
+	text-align: center;
+	background-color: #1E88E5;
+	color: #FFFFFF;
+}
+
+h1 {
+	font-size: 4rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	color: #0D47A1;
+}
+
+#container {
+	font-size: 3rem;
+}
+
+#funstuff {
+	font-size: 5rem;
+	position: relative;
+	-webkit-animation-name: cloud;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-iteration-count: infinite;
+	animation-name: cloud;
+	animation-duration: 3s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes cloud {
+	0% {color: #FFFFFF;}
+	100% {color: #0D47A1;}
+}
+
+@keyframes cloud {
+	0% {color: #FFFFFF;}
+	100% {color: #0D47A1;}
+}
+
+.location {
+	display: inline;
+}
+
+@media (max-width: 450px) {
+	h1 {
+		font-size: 4rem;
+	}
+
+	h2 {
+		font-size: 3.5rem;
+	}
+
+	#container	{
+		font-size: 4rem;
+	}
 }

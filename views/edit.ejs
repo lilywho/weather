@@ -6,11 +6,16 @@
 <header>
   <% include ../views/partials/header.ejs %>
 </header>
-  <body>
+<body>
+  <p id="container">
     <form action="/weather/<%= weather.zip %>" method="POST">
       <input type="number" name="zip" value="<%= weather.zip %>"/>
       <input type="hidden" name="_method" value="PUT"/>
       <button>Submit</button>
     </form>
-  </body>
+  </p>
+</body>
+<footer>
+  <% include ../views/partials/footer.ejs %>
+</footer>
 </html>

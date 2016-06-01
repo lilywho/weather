@@ -7,11 +7,14 @@
 	<% include ../views/partials/header.ejs %>
 </header>
 <body>
-	<br><%=weatherData.name%>
-	<br><%=weatherData.main.temp%>
-	<br><%=weatherData.main.temp_min%>
-	<br><%=weatherData.main.temp_max%>
+	<p id="container">
+		<br><%=weatherData.name%>
+		<br><strong>Current:</strong> <%=weatherData.main.temp%>
+		<br><strong>⬇:</strong> <%=weatherData.main.temp_min%>
+		<br><strong>⬆:</strong> <%=weatherData.main.temp_max%>
+	</p>
 </body>
-<footer> 
+<footer>
+	<% include ../views/partials/footer.ejs %>
 </footer>
 </html>
