@@ -73,6 +73,10 @@ p {
 	display: inline;
 }
 
+.zip {
+	font-size: 4.5rem;
+}
+
 @media (max-width: 450px) {
 	h1 {
 		font-size: 2rem;
