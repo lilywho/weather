@@ -17,9 +17,9 @@ a {
 	text-decoration: none;
 }
 
-/*a:hover, a:active {
+a:hover, a:active {
 	color: #0D47A1;
-}*/
+}
 
 span {
 	display: inline-block;
@@ -27,6 +27,7 @@ span {
 
 input {
 	height: 2.25rem;
+	width: 175px;
 	font-size: 2rem;
 }
 
