@@ -10,8 +10,10 @@
   <div id="container">
     <% for(i = 0; i < weather.length; i++) { %>
       <a href="/weather/<%= weather[i].zip %>"><%=weather[i].zip%></a>
-      <a href="/weather/<%= weather[i].zip %>/edit">Edit</a>
-      <form action="/weather/<%=weather[i].id%>" method="POST"> <input type='hidden' name='_method' value='DELETE'/> <button>Delete</button> </form>
+      <span>
+        <button> <a href="/weather/<%= weather[i].zip %>/edit">Edit</a> </button>
+        <form action="/weather/<%=weather[i].id%>" method="POST"> <input type='hidden' name='_method' value='DELETE'/> <button>Delete</button> </form>
+      </span>
       <hr>
     <% } %>
     <form action="/weather" method="POST">

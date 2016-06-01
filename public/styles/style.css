@@ -21,6 +21,10 @@ a:hover, a:active {
 	color: #0D47A1;
 }
 
+span {
+	display: inline-block;
+}
+
 input {
 	height: 2.25rem;
 	font-size: 2rem;
