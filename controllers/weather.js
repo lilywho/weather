@@ -39,9 +39,10 @@ router.get("/:zip", function(req, res) {
       console.log('-----------------------------');
       console.log("Data here lol.");
       var weatherData = JSON.parse(body);
+      weatherData.greeting = "Hello."
       console.log('-----------------------------');
-      // res.json(weatherData);
-      res.render("show.ejs", {weatherData});
+      res.json(weatherData);
+      // res.render("show.ejs", {weatherData});
     };
 	});
 });

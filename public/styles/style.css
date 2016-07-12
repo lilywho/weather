@@ -43,7 +43,8 @@ p {
 
 #container {
 	font-size: 3rem;
-	margin: 0;
+	margin: 0 auto;
+	width: 70%;
 }
 
 #funstuff {
@@ -97,5 +98,6 @@ p {
 	}
 	#container	{
 		font-size: 2rem;
+		width: 100%;
 	}
 }

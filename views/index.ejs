@@ -8,18 +8,18 @@
 </header>
 <body>
   <div id="container">
+    <form action="/weather" method="POST">
+      <input type="number" name="zip" placeholder="ZIP Code"/>
+      <button>Add</button>
+    </form>
     <% for(i = 0; i < weather.length; i++) { %>
+      <hr>
       <a href="/weather/<%= weather[i].zip %>" class="zip"><%=weather[i].zip%></a>
       <span>
         <button> <a href="/weather/<%= weather[i].zip %>/edit">Edit</a> </button>
         <form action="/weather/<%=weather[i].id%>" method="POST"> <input type='hidden' name='_method' value='DELETE'/> <button>Delete</button> </form>
       </span>
-      <hr>
     <% } %>
-    <form action="/weather" method="POST">
-      <input type="number" name="zip" placeholder="ZIP Code"/>
-      <button>Add</button>
-    </form>
   </div>
 </body>
 <footer>
