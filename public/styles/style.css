@@ -17,7 +17,7 @@ a {
 	text-decoration: none;
 }
 
-a:hover, a:active {
+button:hover, a:hover {
 	color: #0D47A1;
 }
 
